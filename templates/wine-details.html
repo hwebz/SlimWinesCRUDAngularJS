@@ -1,0 +1,17 @@
+<div id="wines">
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width: 20rem;">
+                <div class="card-thumb">
+                    <img class="card-img-top" ng-src="{{wine.picture}}" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title" ng-bind="wine.name"></h4>
+                    <p class="card-text" ng-bind="wine.description"></p>
+                    <a href="#!/wines/{{wine.id}}/edit" class="btn btn-warning">Edit</a>
+                    <a href="#" class="btn btn-danger" ng-click="deleteWine()">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

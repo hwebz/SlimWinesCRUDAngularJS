@@ -1,0 +1,16 @@
+<div id="wines">
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width: 20rem;" ng-repeat="wine in wines">
+                <div class="card-thumb">
+                    <img class="card-img-top" ng-src="{{wine.picture}}" alt="Card image cap">
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title" ng-bind="wine.name"></h4>
+                    <p class="card-text" ng-bind="wine.description"></p>
+                    <a ng-href="#!/wines/{{ wine.id }}/details" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

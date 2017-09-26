@@ -1,0 +1,45 @@
+<div id="wine-add">
+    <div class="container">
+        <div class="row">
+            <form novalidate name="wineAddForm" ng-submit="submitForm(wineAddForm.$valid)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="username" ng-model="wine.name" placeholder="Enter wine's name" required value="{{wine.name}}" />
+                    <div ng-show="wineAddForm.username.$invalid && wineAddForm.username.$dirty">
+                        <div class="form-control-feedback" ng-show="wineAddForm.username.$invalid">Name of wine is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="grapes">Grapes</label>
+                    <input type="text" class="form-control" name="grapes" ng-model="wine.grapes" placeholder="Enter wine's grapes" required ng-minlength="3" ng-maxlength="8" value="{{wine.grapes}}" />
+                    <div ng-show="wineAddForm.grapes.$invalid && wineAddForm.grapes.$dirty">
+                            <div class="form-control-feedback" ng-show="wineAddForm.grapes.$error.required">Grapes of wine is required.</div>
+                            <div class="form-control-feedback" ng-show="wineAddForm.grapes.$error.minlength">Min length is 3.</div>
+                            <div class="form-control-feedback" ng-show="wineAddForm.grapes.$error.maxlength">Max length is 8.</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Year</label>
+                    <input type="number" class="form-control" name="year" ng-model="wine.year" required string-to-number value="{{wine.year}}" step="1" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Country</label>
+                    <input type="text" class="form-control" name="country" ng-model="wine.country" placeholder="Country" required  value="{{wine.country}}" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Region</label>
+                    <input type="text" class="form-control" name="region" ng-model="wine.region" placeholder="Region" required  value="{{wine.region}}" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Description</label>
+                    <textarea ng-model="wine.description" name="description" class="form-control" placeholder="Description">{{wine.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">Picture</label>
+                    <input type="text" class="form-control" name="picture" ng-model="wine.picture" placeholder="Enter wine's picture url" required value="{{wine.picture}}" />
+                </div>
+                <button ng-class="(wine.id > 0 ? 'btn btn-warning' : 'btn btn-primary')" type="submit">{{ wine.id > 0 ? 'Update' : 'Add'}}</button>
+            </form>
+        </div>
+    </div>
+</div>
